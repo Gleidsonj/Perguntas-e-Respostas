@@ -1,9 +1,11 @@
-let express = require("express")
-let app = express()
+let express = require("express");
+let app = express();
 
-const connection = require("./database/database") // aqui importamos a nossa conexão, o sequelize
-const Pergunta = require("./database/Perguntas") // exportando model de perguntas
-const Resposta = require("./database/Resposta")
+require("dotenv").config();
+
+const connection = require("./database/database"); // aqui importamos a nossa conexão, o sequelize
+const Pergunta = require("./database/Perguntas"); // exportando model de perguntas
+const Resposta = require("./database/Resposta");
 
 //Database - testando nosso banco de dados
 connection //vamos tentar nos autenticar com meu banco
@@ -114,4 +116,9 @@ app.post("/responder", (req, res) => {
 })
 
 // ----------- INICIANDO SERVIDOR -----------
-app.listen(3080, console.log("Servidor rodando!"))
+
+const PORT = process.env.PORT || 3080
+
+app.listen(PORT,() => {
+    console.log("Servidor rodando!")
+})
