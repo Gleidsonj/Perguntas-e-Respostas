@@ -1,57 +1,47 @@
-Para conectar o banco de dados, precisamos instalar duas bibliotecas
+# Sistema de Perguntas e Respostas
 
-1. Sequelize - ele faz a comunicação do Banco de dados ao servidor.
+Projeto full stack desenvolvido com o objetivo de praticar back-end com Node.js e integração com banco de dados.
 
-* *npm install --save sequelize*
+A aplicação permite que usuários cadastrem perguntas e respondam perguntas já existentes. Todas as informações são armazenadas em um banco de dados MySQL.
 
-2. MySQL2 - precisamos dessa biblioteca para trabalhar com Sequelize junto com o MySQL.
+Esse projeto foi muito importante para consolidar meus estudos em Node.js, Express e Sequelize.
 
-* *npm install --save mysql2*
+---
 
+## 🚀 Funcionalidades
 
-Para ler os dados enviados pelo formulário precisamos de uma biblioteca - BORY PARSER
+- Cadastrar perguntas  
+- Visualizar todas as perguntas  
+- Responder perguntas  
+- Listar respostas vinculadas às perguntas  
+- Persistência de dados no banco de dados  
 
-* *app.use(bodyParser.urlencoded({extended: false}))*
+---
 
-bodyParser.urlencoded(...) - Serve para ler dados enviados por forms HTML
-extended: false - Diz que você quer trabalhar com dados simples, como strings e números.
+## 🛠️ Tecnologias utilizadas
 
+- Node.js  
+- Express  
+- JavaScript  
+- MySQL  
+- Sequelize  
+- EJS  
+- Bootstrap  
 
-------------- MODEL -----------------
+---
 
-Definindo MODEL para criar uma tabela no Banco de Dados conectado.
-O connection.define() - é onde você coloca o nome da tabela
+## 📂 Estrutura do projeto
 
-const Perguntas = connection.define('perguntas', {
-    titulo: {
-        type: sequelize.STRING,
-        allowNull: false // isso faz com que esse campo nunca esteja vazio no seu banco de dados
-    },
+- `database` → configuração da conexão com o banco  
+- `models` → models do Sequelize  
+- `routes` → rotas da aplicação  
+- `views` → páginas EJS  
+- `public` → arquivos estáticos (CSS, JS)  
 
-    descricao: {
-        type: sequelize.TEXT,
-        allowNull: false
-    }
-});
+---
 
+## ⚙️ Como executar o projeto localmente
 
-Isso vai sincronizar o que está aqui com o banco de dados, dai de fato irá criar a tabela
-e o force: false - significa que ele não irá forçar a criação caso a tebale já exista
-e o Then() é executado quando a tabela é criada  
-Perguntas.sync({force: false}).then(() => {
-    console.log("Tabela criada!")
-})
-
-
-
------------ Adicionando dados na nossa tabela -----------------
-    Pergunta.create({
-        titulo: titulo,
-        descricao: descricao
-    }).then(() => {
-        res.redirect("/index")
-    })
-
-Aqui é como se você tivesse escrevendo um INSERT INTO tabela VALUES (valores), só que de maneira bem simplificada.
-
-
+1. Clone o repositório:
+```bash
+git clone https://github.com/seu-usuario/seu-repositorio.git
