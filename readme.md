@@ -8,7 +8,7 @@ Esse projeto foi muito importante para consolidar meus estudos em Node.js, Expre
 
 ---
 
-## 🚀 Funcionalidades
+##  Funcionalidades
 
 - Cadastrar perguntas  
 - Visualizar todas as perguntas  
@@ -18,7 +18,7 @@ Esse projeto foi muito importante para consolidar meus estudos em Node.js, Expre
 
 ---
 
-## 🛠️ Tecnologias utilizadas
+##  Tecnologias utilizadas
 
 - Node.js  
 - Express  
@@ -30,7 +30,7 @@ Esse projeto foi muito importante para consolidar meus estudos em Node.js, Expre
 
 ---
 
-## 📂 Estrutura do projeto
+##  Estrutura do projeto
 
 - `database` → configuração da conexão com o banco  
 - `models` → models do Sequelize  
